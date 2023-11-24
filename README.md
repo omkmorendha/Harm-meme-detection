@@ -29,7 +29,23 @@ Here are the various sub-models we used for our model
     2. DistilRoBERTa
     3. MiniLM  
 3. CLIP (Both Text and Image)
-   
+
+## Dataset
+In order to carry out our project, we employed the HarMeme dataset. This dataset consists of
+two divisions: Harm-P and Harm-C. Harm-P consists of memes related to US Politics while
+Harm-C consists of memes related to Covid-19. The creators of the dataset did so by scraping
+various publicly available meme pages in addition to a keyword-based search on Google.
+They further hired annotators to appropriately label each of the memes in one of three
+categories: not harmful, partially harmful or very harmful. Moreover, each of the harmful
+(partially harmful and very harmful) memes are labeled with a target. The target could be
+either Individual, Organization, Community or Society.
+We have implemented our architecture on the Harm-C dataset alone. It consists of a total of
+3,544 memes. The dataset has three splits: train, test and validation. The training dataset
+accounts for 85%, test for 10% and validation for 5% of the total dataset. Each of these
+datasets consist of an image ID, the image name, its labels and the text of the meme.
+
+[Dataset Link](https://www.kaggle.com/datasets/samuelmathew28/harmeme/)
+
 ## Results 
 We tweaked around the original implementation of MOMENTA and introduced newer and better CV and NLP models due to which we achieved a significant improvement over the original model. We also extracted the “best-label” for each image that helped us get a more in depthful insight into each image. Due to these changes, our best model outperformed MOMENTA in all baselines but one.
 
